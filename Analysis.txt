@@ -1,0 +1,86 @@
+Amar Bakir
+CS 440
+Project 3: CAF
+
+The way I reached my method of choosing parameters was to run over fold 0 and try several different parameter combinations. It was soon apparent that setting the number of similarities required to be a neighbor too high reduced the number of neighbors available, even if the neighbors would be better qualified. A proper number, something between 4 and 6, worked best. The method of measuring distance for item similarity seemed to be better, on average, with Pearson than with Euclidean, so I also went with that, though for fewer neighbors Euclidean might be better. For the rater similarity I went with Euclidean since I thought it would have much fewer neighbors than the items would, though I tried to select more neighbors to consider to even things out. Movie watchers' characteristics are more complicated to match than the movies themselves, especially since movies can fall back on genre similarities. I set the number of neighbors to consider to 7 for rater similarity tests and a smaller number of 5 for the item tests, since that proved to give better results. Sometimes an increase led to an improvement in one test and a decrease in performance in the other, so a middle ground worked best. Turning on the predictAgainstBaseline function also led to improvements so I kept that as true. My custom function simply takes the average of the two baselines and uses that for a guess.
+
+Fold 1:
+
+ITEM_BASELINE: RMSE of 0.9760509942602396 0.9760509942602396
+RATER_BASELINE: 0.9512131237576656
+MIXED_BASELINE: 0.9982919470097009
+ITEM_SIMILARITY: 1.0929444854000638
+RATER_SIMILARITY: 0.9779663195658987
+CUSTOM: 0.9549556921284932
+
+Fold 2:
+
+ITEM_BASELINE: 0.9658951655124065
+RATER_BASELINE: 0.9470627167468665
+MIXED_BASELINE: 0.9867225311011945
+ITEM_SIMILARITY: 1.0383813997079847
+RATER_SIMILARITY: 0.9738436119423076
+CUSTOM: 0.947487975514514
+
+Fold 3:
+
+ITEM_BASELINE: 0.982432492028705
+RATER_BASELINE: 0.9626236715366607
+MIXED_BASELINE: 1.0025711433156608
+ITEM_SIMILARITY: 1.0643030628145889
+RATER_SIMILARITY: 0.983589512346897
+CUSTOM: 0.9639258109174228
+
+Fold 4:
+
+ITEM_BASELINE: 0.9734716713316441
+RATER_BASELINE: 0.9528600440295629
+MIXED_BASELINE: 0.9964701957469283
+ITEM_SIMILARITY: 1.0468677588654842
+RATER_SIMILARITY: 0.9812777219982757
+CUSTOM: 0.9546542191885016
+
+Fold 5:
+
+ITEM_BASELINE: 0.9775337482150276
+RATER_BASELINE: 0.9914114854037451
+MIXED_BASELINE: 0.9834290864393634
+ITEM_SIMILARITY: 1.0707893696663369
+RATER_SIMILARITY: 0.9568362243285573
+CUSTOM: 0.9585197643443618
+
+Fold 6:
+
+ITEM_BASELINE: 0.9793088329033126
+RATER_BASELINE: 0.9560227101580032
+MIXED_BASELINE: 1.0042711516982774
+ITEM_SIMILARITY: 1.0593174146772522
+RATER_SIMILARITY: 0.9784010906923271
+CUSTOM: 0.9588764249854403
+
+Fold 7:
+
+ITEM_BASELINE: 0.979824429893858
+RATER_BASELINE: 0.9556076874298898
+MIXED_BASELINE: 0.9982900531311244
+ITEM_SIMILARITY: 1.0767161735622994
+RATER_SIMILARITY: 0.9794841602303859
+CUSTOM: 0.9591417409701288
+
+Fold 8:
+
+ITEM_BASELINE: 0.9724053964355198
+RATER_BASELINE: 0.943730465528675
+MIXED_BASELINE: 0.9891666466537916
+ITEM_SIMILARITY: 1.0556293217551322
+RATER_SIMILARITY: 0.9712411860992844
+CUSTOM: 0.9492560856937698
+
+Fold 9:
+
+ITEM_BASELINE: 0.9818888276223654
+RATER_BASELINE: 0.9554948905653641
+MIXED_BASELINE: 1.0030569058422052
+ITEM_SIMILARITY: 1.069408208068382
+RATER_SIMILARITY: 0.9831807727559073
+CUSTOM: 0.9597681681402114
